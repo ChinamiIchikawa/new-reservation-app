@@ -12,8 +12,8 @@ import { Key } from 'protractor';
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
 
-  constructor(public auth: AuthService) {}
-
+    constructor(public authService: AuthService) {}
+    
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     
     const token = this.authService.getToken()
